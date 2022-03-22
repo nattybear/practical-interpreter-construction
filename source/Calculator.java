@@ -12,6 +12,14 @@ class Calculator
     currentCharPosition++;
   }
 
+  public static int GetNum()
+  {
+    int number = new Integer(Look+"").intValue();
+    GetChar();
+
+    return number;
+  }
+
   public static void main(String args[])
   {
     expression = "1+2";
