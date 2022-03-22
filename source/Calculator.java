@@ -14,7 +14,9 @@ class Calculator
 
   public static void main(String args[])
   {
-    expression = "1+";
+    expression = "1+2";
+    GetChar();
+    System.out.println(Look);
     GetChar();
     System.out.println(Look);
     GetChar();
