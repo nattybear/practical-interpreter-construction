@@ -55,24 +55,26 @@ class Calculator
   public static int ArithmeticExpression()
   {
     int result = Term();
-
-    switch (Look)
+    while ((Look == '+') || (Look == '-'))
     {
-      case '+':
-        result = result + Add();
-        break;
-      case '-':
-        result = result - Subtract();
-        break;
+      switch (Look)
+      {
+        case '+':
+          result = result + Add();
+          break;
+        case '-':
+          result = result - Subtract();
+          break;
+      }
     }
-
     return result;
   }
 
   public static void main(String args[])
   {
-    expression = "1+9";
+    expression = "9+2+5-3";
     Init();
-    System.out.println(ArithmeticExpression());
+    int result = ArithmeticExpression();
+    System.out.println("Result: " + result);
   }
 }
