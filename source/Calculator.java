@@ -20,6 +20,11 @@ class Calculator
     return number;
   }
 
+  public static void Init()
+  {
+    GetChar();
+  }
+
   public static void main(String args[])
   {
     expression = "1+2";
