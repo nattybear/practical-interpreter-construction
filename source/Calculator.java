@@ -25,20 +25,54 @@ class Calculator
     GetChar();
   }
 
+  public static void MatchAndEat(char chr)
+  {
+    if (Look == chr)
+      GetChar();
+    else {
+      System.out.println("Error: Unexpected character.");
+      System.exit(0);
+    }
+  }
+
+  public static int Term()
+  {
+    return GetNum();
+  }
+
+  public static int Add()
+  {
+    MatchAndEat('+');
+    return Term();
+  }
+
+  public static int Subtract()
+  {
+    MatchAndEat('-');
+    return Term();
+  }
+
+  public static int ArithmeticExpression()
+  {
+    int result = Term();
+
+    switch (Look)
+    {
+      case '+':
+        result = result + Add();
+        break;
+      case '-':
+        result = result - Subtract();
+        break;
+    }
+
+    return result;
+  }
+
   public static void main(String args[])
   {
-    int result = 0;
-    expression = "1+2";
-    System.out.println("Expression: " + expression);
+    expression = "1+9";
     Init();
-    int firstNumber = GetNum();
-    char operator = Look;
-    GetChar();
-    int secondNumber = GetNum();
-    System.out.println("First Number: " + firstNumber);
-    System.out.println("Operator: " + operator);
-    System.out.println("Second Number: " + secondNumber);
-    int sum = firstNumber + secondNumber;
-    System.out.println("SUM of Those Two Number: " + sum);
+    System.out.println(ArithmeticExpression());
   }
 }
