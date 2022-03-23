@@ -35,9 +35,27 @@ class Calculator
     }
   }
 
-  public static int Term()
+  public static int Factor()
   {
     return GetNum();
+  }
+
+  public static int Term()
+  {
+    int result = Factor();
+    while ((Look == '*') || (Look == '/'))
+    {
+      switch (Look)
+      {
+        case '*':
+          result = result * Multiply();
+          break;
+        case '/':
+          result = result / Divide();
+          break;
+      }
+    }
+    return result;
   }
 
   public static int Add()
@@ -50,6 +68,18 @@ class Calculator
   {
     MatchAndEat('-');
     return Term();
+  }
+
+  public static int Multiply()
+  {
+    MatchAndEat('*');
+    return Factor();
+  }
+
+  public static int Divide()
+  {
+    MatchAndEat('/');
+    return Factor();
   }
 
   public static int ArithmeticExpression()
@@ -72,9 +102,10 @@ class Calculator
 
   public static void main(String args[])
   {
-    expression = "9+2+5-3";
+    expression = "9*3-1+8*5-7";
+    System.out.println("Expression: " + expression);
     Init();
     int result = ArithmeticExpression();
-    System.out.println("Result: " + result);
+    System.out.println("Calculation Result: " + result);
   }
 }
