@@ -27,12 +27,18 @@ class Calculator
 
   public static void main(String args[])
   {
+    int result = 0;
     expression = "1+2";
+    System.out.println("Expression: " + expression);
+    Init();
+    int firstNumber = GetNum();
+    char operator = Look;
     GetChar();
-    System.out.println(Look);
-    GetChar();
-    System.out.println(Look);
-    GetChar();
-    System.out.println(Look);
+    int secondNumber = GetNum();
+    System.out.println("First Number: " + firstNumber);
+    System.out.println("Operator: " + operator);
+    System.out.println("Second Number: " + secondNumber);
+    int sum = firstNumber + secondNumber;
+    System.out.println("SUM of Those Two Number: " + sum);
   }
 }
