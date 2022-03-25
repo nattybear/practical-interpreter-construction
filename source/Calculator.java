@@ -23,10 +23,6 @@ class Calculator
     }
     while (Character.isDigit(Look))
     {
-      System.out.println(Look);
-      try {
-        Thread.sleep(300);
-      } catch (Exception e) {}
       tempStr = tempStr + Look;
       GetChar();
     }
