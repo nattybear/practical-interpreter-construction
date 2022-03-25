@@ -14,9 +14,19 @@ class Calculator
 
   public static int GetNum()
   {
-    int number = Integer.parseInt(Look + "");
-    GetChar();
-
+    int number = 0;
+    String tempStr = "";
+    if (!Character.isDigit(Look))
+    {
+      System.out.println("Error: Numbers expected.");
+      System.exit(0);
+    }
+    while (Character.isDigit(Look))
+    {
+      tempStr = tempStr + Look;
+      GetChar();
+    }
+    number = Integer.parseInt(tempStr);
     return number;
   }
 
@@ -111,7 +121,7 @@ class Calculator
 
   public static void main(String args[])
   {
-    expression = "(9*3-1+8)*5-7";
+    expression = "(9*3-1+8)*5-70";
     System.out.println("Expression: " + expression);
     Init();
     int result = ArithmeticExpression();
