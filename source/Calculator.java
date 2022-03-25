@@ -14,7 +14,7 @@ class Calculator
 
   public static int GetNum()
   {
-    int number = new Integer(Look+"").intValue();
+    int number = Integer.parseInt(Look + "");
     GetChar();
 
     return number;
