@@ -1,5 +1,5 @@
 run: compile
-	@cd classes && java Calculator
+	@cd classes && java Tokenizer
 
 compile:
 	@javac -d classes source/*.java
