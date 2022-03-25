@@ -121,7 +121,7 @@ class Calculator
 
   public static void main(String args[])
   {
-    expression = "(9*3-1+8)*5-70";
+    expression = "(9*3-1+8)*5-70 ";
     System.out.println("Expression: " + expression);
     Init();
     int result = ArithmeticExpression();
