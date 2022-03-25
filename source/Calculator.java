@@ -37,7 +37,16 @@ class Calculator
 
   public static int Factor()
   {
-    return GetNum();
+    int result = 0;
+    if (Look == '(')
+    {
+      MatchAndEat('(');
+      result = ArithmeticExpression();
+      MatchAndEat(')');
+
+    } else
+      result = GetNum();
+    return result;
   }
 
   public static int Term()
